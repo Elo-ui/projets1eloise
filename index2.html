@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets Électriques</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px 20px;
+      width: 300px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: none;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .text-section {
+      display: none;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      position: relative;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .back-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-menu">
+    <h1>Cliquez pour plus de détails</h1>
+    <div class="btn-container">
+      <button class="btn" onclick="showText('texte1')">
+        Étude des défauts électriques dans un réseau HTA
+      </button>
+      <button class="btn" onclick="showText('texte2')">
+        Création d'un réseau électrique 100% autonome
+      </button>
+    </div>
+  </div>
+
+  <div id="texte1" class="text-section">
+    <h2>Étude des défauts électriques dans un réseau HTA avec modélisation sous MATLAB/Matpower</h2>
+    <p>Projet d’étude des courants de court-circuit sur un réseau HTA 60/30/5 kV modélisé sous MATLAB/Matpower : analyse de défauts triphasés et monophasés, calcul des impédances de Thévenin via les matrices Ybus et Zbus, et évaluation de l’impact des résistances, de la mise à la terre et de la topologie du réseau.</p>
+    <button class="back-btn" onclick="goBack()">Retour</button>
+  </div>
+
+  <div id="texte2" class="text-section">
+    <h2>Optimisation d’un réseau 100 % renouvelable</h2>
+    <p>Étude de l’autonomie énergétique de l’île d’El Hierro (Canaries), 100 % renouvelable grâce à l’éolien couplé à une STEP. J’ai modélisé le système existant, dimensionné les équipements (turbines, pompes, stockage) et proposé une amélioration via les volants d’inertie et un CAES.</p>
+    <button class="back-btn" onclick="goBack()">Retour</button>
+  </div>
+
+  <script>
+    function showText(id) {
+      document.getElementById("main-menu").style.display = "none";
+      document.getElementById(id).style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("texte1").style.display = "none";
+      document.getElementById("texte2").style.display = "none";
+      document.getElementById("main-menu").style.display = "block";
+    }
+  </script>
+</body>
+</html>
